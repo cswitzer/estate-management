@@ -41,6 +41,17 @@ THIRD_PARTY_APPS = [
     "django_celery_beat",
 ]
 
+LOCAL_APPS = [
+    "core_apps.issues",
+    "core_apps.users",
+    "core_apps.common",
+    "core_apps.profiles",
+    "core_apps.ratings",
+    "core_apps.posts",
+]
+
+INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
+
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
@@ -50,10 +61,6 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
-
-LOCAL_APPS = []
-
-INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
 ROOT_URLCONF = "config.urls"
 
