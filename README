@@ -1,0 +1,34 @@
+# Project Title
+
+This project is designed to help me learn the basics and some advanced features of NextJS
+
+## What I learned
+
+- 9/04/2024
+
+1. Separating django settings into base, local, staging, and production versions for easy, clean management
+
+- 9/05/2024
+
+1. Adding apps into their own directory to keep them separated from all other configuration files
+
+- 9/10/2024
+
+1. Setting up an optimized Dockerfile containing multistage builds
+2. Creating and using an entrypoint so the Dockerfile can setup postgres before running the command from docker compose
+3. Creating docker compose file to manage relationships, networks, and volumes between multiple containers
+4. Creating volumes to map changes from my local filesystem to the one in the container
+5. Using volumes to persist db data in my postgres container and mailpit container so that data is preserved when stopping containers
+6. Praise Docker because I don't have to download postgres, mailpit, etc. to my own computer!
+7. Use Makefiles to make running long commands easier
+
+- 9/12/2024
+
+1. Using yasg to generate automatic redoc documentation for all my API endpoints
+2. It is best practice to setup a custom user manager to add fields we think are important for the user class
+3. We need to modify the UserChangeForm and UserCreationForm to account for new fields we added to user class
+4. Difference between AbstractUser and AbstractBaseUser
+   - AbstractUser -> Includes base functionality of the default Django User model like username, first_name, last_name, email, is_staff, is_superuser, and date_joined. Much easier to extend but provides less flexibility
+   - AbstractBaseUser -> Provides only core authentication functionality like password and last login without username and email. Harder to extend but provides much more flexibility
+5. How to create custom user model, specifying required fields and the username field
+6. Creating a custom user admin class using (BaseUserAdmin), specifying which fields the add and edit forms have

@@ -37,10 +37,12 @@ RUN addgroup --system django && \
   chown -R django:django ${APP_HOME}/staticfiles && \
   chmod -R 777 ${APP_HOME}/staticfiles
 
-  #   && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false \
+# apt-get purge -y --auto-remove will take dependencies that were automatically installed
+# to sat
 RUN apt-get update && apt-get install --no-install-recommends -y \
   libpq-dev \
   gettext \
+  && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false \
   && rm -rf /var/lib/apt/lists/*
 
 COPY --from=python-build-stage /usr/src/app/wheels /wheels/
@@ -67,7 +69,6 @@ RUN chmod +x /start
 # COPY --chown=django:django ./docker/local/django/celery/flower/start.sh /start-flower
 # RUN sed -i 's/\r$//g' /start-flower
 # RUN chmod +x /start-flower
-
 
 COPY --chown=django:django . ${APP_HOME}
 
