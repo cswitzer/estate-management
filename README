@@ -32,3 +32,7 @@ This project is designed to help me learn the basics and some advanced features 
    - AbstractBaseUser -> Provides only core authentication functionality like password and last login without username and email. Harder to extend but provides much more flexibility
 5. How to create custom user model, specifying required fields and the username field
 6. Creating a custom user admin class using (BaseUserAdmin), specifying which fields the add and edit forms have
+
+- 10/14/2024
+
+1. How to configure celery from the core/config app using local settings
