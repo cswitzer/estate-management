@@ -164,13 +164,22 @@ CELERY_TASK_SERIALIZER = "json"
 CELERY_RESULT_SERIALIZER = "json"
 CELERY_RESULT_BACKEND_MAX_RETRIES = 10
 
+# Send 'sent' event when a task is sent to the broker
 CELERY_TASK_SEND_SENT_EVENT = True
+
+# Enables richer insight into the results of tasks, like worker's hostnames and timestamps
 CELERY_RESULT_EXTENDED = True
 
+# Always retry to connect to the result backend (broker) up to 'CELERY_RESULT_BACKEND_MAX_RETRIES' times.
+# Connections can fail for a number of reasons, such as network issues, broker downtime, etc.
 CELERY_RESULT_BACKEND_ALWAYS_RETRY = True
 
+# Triggers warning if task exceeds a minute, and kills it after 5 minutes
 CELERY_TASK_TIME_LIMIT = 5 * 60
 CELERY_TASK_SOFT_TIME_LIMIT = 60
 
+# Used to store periodic tasks in the database. Like cron jobs, but more flexible
 CELERY_BEAT_SCHEDULER = "django_celery_beat.schedulers:DatabaseScheduler"
+
+# Integration with flower. Sends task events like starting, finishing, etc.
 CELERY_WORKER_SEND_TASK_EVENTS = True
