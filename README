@@ -7,10 +7,12 @@ This project is designed to help me learn the basics and some advanced features 
 - 9/04/2024
 
 1. Separating django settings into base, local, staging, and production versions for easy, clean management
+2. We need to specify which settings we are using in manage.py (os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings.local"))
 
 - 9/05/2024
 
 1. Adding apps into their own directory to keep them separated from all other configuration files
+2.
 
 - 9/10/2024
 
@@ -41,3 +43,14 @@ This project is designed to help me learn the basics and some advanced features 
 
 1. How to configure a Dockerfile for a React/NextJS application
 2. How to configure a reverse proxy and load balancer using nginx
+3. I can now make requests to just localhost:8080, and nginx will route everything for me! That's super cool
+
+- 10/18/2024
+
+1. Use anchors to copy configuration from one service to another
+2. The above point is useful when configuring celery, celerybeat, and flower because:
+   - Reduces redundancy and ensures consistency
+   - Ensures environment variables are shared between the services
+   - Settings are also shared between all the services to access the same models, db, etc.
+   - We also inherit the same volumes, which is useful for persisting data to the same place
+3. Configure watchfiles to restart celery, beat, and flower when python files change
