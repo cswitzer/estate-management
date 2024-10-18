@@ -36,3 +36,8 @@ This project is designed to help me learn the basics and some advanced features 
 - 10/14/2024
 
 1. How to configure celery from the core/config app using local settings
+
+- 10/16/2024
+
+1. How to configure a Dockerfile for a React/NextJS application
+2. How to configure a reverse proxy and load balancer using nginx
