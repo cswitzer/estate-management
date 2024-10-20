@@ -54,3 +54,13 @@ This project is designed to help me learn the basics and some advanced features 
    - Settings are also shared between all the services to access the same models, db, etc.
    - We also inherit the same volumes, which is useful for persisting data to the same place
 3. Configure watchfiles to restart celery, beat, and flower when python files change
+
+- 10/20/2024
+
+1. It is good practice to make the user model only handle authentication rather than user details
+2. For the above point, any extra user details are best kept in a profile class
+3. Use forward references in Python if type hinting for a type which has not:
+   - been declared yet
+   - is declared, but is beneath the where it is being referenced
+4. Use slug fields and url patterns set the format <name:slug> to have human readable urls
+5. Use post save signals to trigger events when models are saved (e.g. create profile on saving a new user)
