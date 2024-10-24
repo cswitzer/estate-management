@@ -72,3 +72,4 @@ This project is designed to help me learn the basics and some advanced features 
 - 10/21/2024
 
 1. Configuring djoser with simple jwt to specify how user will authenticate with our system
+2. Configuring settings for Google OAuth2, plus extra fields like first and last name

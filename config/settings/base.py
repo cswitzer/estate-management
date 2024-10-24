@@ -198,7 +198,8 @@ cloudinary.config(
 
 COOKIE_NAME = "access"
 COOKIE_SAMESITE = "Lax"
-# The cookie can be accessed on any path
+# The cookie will be sent to any path
+# Could have defined it as /supersecret/, then only requests to /supersecret/ would have access to the cookie
 COOKIE_PATH = "/"
 # Prevents JavaScript from accessing the cookie
 COOKIE_HTTPONLY = True
@@ -245,7 +246,7 @@ DJOSER = {
     # Make user pass re_new_password to /users/reset_password_confirm/
     "PASSWORD_RESET_CONFIRM_RETYPE": True,
     # URL to the frontend activation page where the user can activate their account. Must pass uid and token to djoser
-    "ACTIVATE_URL": "activate/{uid}/{token}",
+    "ACTIVATION_URL": "activate/{uid}/{token}",
     # URL to the frontend password reset page where the user can reset their password
     "PASSWORD_RESET_CONFIRM_URL": "password-reset/{uid}/{token}",
     # URIs for redirecting back to our website after social authentication
