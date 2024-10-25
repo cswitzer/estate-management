@@ -264,3 +264,8 @@ SOCIAL_AUTH_GOOGLE_OAUTH2_SCOPE = [
 # In addition to email and profile, we also want to get the user's first and last name
 # This is necessary to create a user in our database
 SOCIAL_AUTH_GOOGLE_OAUTH2_EXTRA_DATA = ["first_name", "last_name"]
+
+AUTHENTICATION_BACKENDS = [
+    "social_core.backends.google.GoogleOAuth2",
+    "django.contrib.auth.backends.ModelBackend",
+]

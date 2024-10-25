@@ -73,3 +73,5 @@ This project is designed to help me learn the basics and some advanced features 
 
 1. Configuring djoser with simple jwt to specify how user will authenticate with our system
 2. Configuring settings for Google OAuth2, plus extra fields like first and last name
+3. Using httponly cookies as an authentication method to ensure JavaScript cannot get tokens from localStorage
+4. Use google oauth2 to authenticate with Django backend
