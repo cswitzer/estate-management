@@ -75,3 +75,13 @@ This project is designed to help me learn the basics and some advanced features 
 2. Configuring settings for Google OAuth2, plus extra fields like first and last name
 3. Using httponly cookies as an authentication method to ensure JavaScript cannot get tokens from localStorage
 4. Use google oauth2 to authenticate with Django backend
+
+- 10/29/2024
+
+1. Create custom "current_user" serializer to get profile object's data for current user
+2. DRF serializer fields can specify a source the data comes from, such as profile.gender, which refers to the profile tied to the user
+3. Create a renderer, in which we specify the format the json data will be in when returned to the user
+4. Create a generic renderer class to dynamically set the object label and consistently format json response among all views
+5. Create shared_app celery tasks so that tasks is not bound only to one app in the project
+6. Use celery tasks to make applications more responsive (task will be handled in the background so user is free to do other things)
+7. Use django celery beat to register periodic tasks within any time period
