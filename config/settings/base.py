@@ -251,7 +251,10 @@ DJOSER = {
     "PASSWORD_RESET_CONFIRM_URL": "password-reset/{uid}/{token}",
     # URIs for redirecting back to our website after social authentication
     "SOCIAL_AUTH_ALLOWED_REDIRECT_URIS": getenv("REDIRECT_URIS", "").split(","),
-    "SERIALIZERS": {"user_create": "core_apps.users.serializers.CreateUserSerializer"},
+    "SERIALIZERS": {
+        "user_create": "core_apps.users.serializers.CreateUserSerializer",
+        "current_user": "core_apps.users.serializers.CustomUserSerializer",
+    },
 }
 
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = getenv("GOOGLE_CLIENT_ID")
