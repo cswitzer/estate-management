@@ -61,6 +61,7 @@ class CustomTokenObtainPairView(TokenObtainPairView):
             if access_token and refresh_token:
                 set_auth_cookies(token_res, access_token, refresh_token)
 
+                # We do not want these tokens here because they are already set as cookies.
                 token_res.data.pop("access", None)
                 token_res.data.pop("refresh", None)
 

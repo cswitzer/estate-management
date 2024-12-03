@@ -50,6 +50,7 @@ LOCAL_APPS = [
     "core_apps.profiles",
     "core_apps.ratings",
     "core_apps.posts",
+    "core_apps.apartments",
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
@@ -272,6 +273,7 @@ SOCIAL_AUTH_GOOGLE_OAUTH2_SCOPE = [
 # This is necessary to create a user in our database
 SOCIAL_AUTH_GOOGLE_OAUTH2_EXTRA_DATA = ["first_name", "last_name"]
 
+# https://python-social-auth.readthedocs.io/en/latest/pipeline.html
 SOCIAL_AUTH_PIPELINE = [
     "social_core.pipeline.social_auth.social_details",
     "social_core.pipeline.social_auth.social_uid",

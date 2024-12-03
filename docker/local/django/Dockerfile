@@ -38,7 +38,7 @@ RUN addgroup --system django && \
   chmod -R 777 ${APP_HOME}/staticfiles
 
 # apt-get purge -y --auto-remove will take dependencies that were automatically installed
-# to sat
+# to satisfy the installed packages and remove them.
 RUN apt-get update && apt-get install --no-install-recommends -y \
   libpq-dev \
   gettext \
