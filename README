@@ -85,3 +85,7 @@ This project is designed to help me learn the basics and some advanced features 
 5. Create shared_app celery tasks so that tasks is not bound only to one app in the project
 6. Use celery tasks to make applications more responsive (task will be handled in the background so user is free to do other things)
 7. Use django celery beat to register periodic tasks within any time period
+
+- 12/03/2024
+
+1. Fields in DRF are the only included fields in serialization (viewing) and deserialization (updating and creating)
