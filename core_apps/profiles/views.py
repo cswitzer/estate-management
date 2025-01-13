@@ -91,6 +91,7 @@ class AvatarUploadView(APIView):
         if serializer.is_valid():
             image = serializer.validated_data["avatar"]
             image_content: bytes = image.read()
+            # delay dispatches the task to the Celery worker, where delay is esentially apply_async with default arguments
             upload_avatar_to_cloudinary.delay(str(profile.id), image_content)
             return Response(
                 {"message": "Avatar upload started."}, status=status.HTTP_202_ACCEPTED
