@@ -4,6 +4,7 @@
 	"rules": {
 		"camelcase": "off",
 		"no-unused-vars": "off",
-		"tailwindcss/no-custom-classname": "off"
+		"tailwindcss/no-custom-classname": "off",
+		"no-unused-imports/no-unused-imports": "off"
 	}
 }
